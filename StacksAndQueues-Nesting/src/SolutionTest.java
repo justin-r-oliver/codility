@@ -26,7 +26,7 @@ public class SolutionTest {
         String S = "())";
 
 
-        Assert.assertEquals(0, new Solution().solution(S));
+//        Assert.assertEquals(0, new Solution().solution(S));
         Assert.assertEquals(0, new Solution().solution("("));
         Assert.assertEquals(0, new Solution().solution(")"));
         Assert.assertEquals(0, new Solution().solution("(()"));

@@ -12,30 +12,31 @@ class Solution {
 
     String parens[] = new String[1000000];
 
-    // Correctness 66%, Performance 80%, Overall 75%
     public int solution(String S) {
         // write your code in Java SE 8
 
         N = S.length();
+        int opens=0, closes =0;
 
         for (int i=0; i < N; i++) {
             String val = S.substring(i, i+1);
 
             if (val.equals("(")) {
-                push(val);
+                opens++;
             } else {
-                pop();
+                closes++;
             }
 
             // WARNING: producing output may seriously slow down your code!
-//            System.out.println(String.format("%s %d %d", val, head, tail));
+//            System.out.println(String.format("%s %d %d", val, opens, closes));
 
-            if (head > tail) {
+            if (closes > opens) {
                 return 0;
             }
         }
 
-        return 1;
+//            System.out.println(String.format("%d %d", opens, closes));
+        return opens == closes ? 1 :0;
     }
     // correctness 66% performance 0%, overall 25%
     public int solution1(String S) {
